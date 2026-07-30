@@ -44,3 +44,10 @@ mse = mean_squared_error(y_test, predictions)
 r2 = r2_score(y_test, predictions)
 print("\nMSE:", mse)
 print("R² score:", r2)
+# Save predictions vs actual to a CSV
+results_df = pd.DataFrame({
+    "Actual": y_test.values,
+    "Predicted": predictions
+})
+results_df.to_csv("results.csv", index=False)
+print("\nSaved results.csv")
